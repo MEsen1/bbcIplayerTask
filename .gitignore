@@ -1,0 +1,11 @@
+node_modules/
+.DS_Store
+.env
+.idea
+package-lock.json
+allure-report
+allure-results
+junit-results
+*.err
+*.log
+.vscode
