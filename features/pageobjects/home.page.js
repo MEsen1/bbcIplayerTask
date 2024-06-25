@@ -32,15 +32,19 @@ class HomePage extends Page {
     return $$("a[data-bbc-content-label='content-item']");
   }
 
+  get carouselItemInViewport(){
+    return $$("ul li:not(.carrousel__item--inactive)")
+  }
+
   async isHomeLogoDisplayed() {
     return (await this.homeLogo).isDisplayed();
   }
 
   async acceptCookies() {
-    try {
-      await this.acceptCookiesButton.click();
-    } catch (error) {
-      throw new Error('Button is not visible');
+    const cookiesButton = await this.acceptCookiesButton;
+    console.log(`cookie button ${await cookiesButton.isClickable()}`)
+    if(await cookiesButton.isClickable()){
+      (await this.acceptCookiesButton).click();
     }
   }
   
