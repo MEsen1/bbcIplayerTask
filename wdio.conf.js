@@ -7,11 +7,11 @@ export const config = {
     // 'path/to/excluded/files'
   ],
   
-  maxInstances: 1,
+  maxInstances: 6,
   
   capabilities: [
 
-    { maxInstances: 1,
+    { maxInstances: 6,
       browserName: "chrome",
       'goog:chromeOptions': {
         args: [
@@ -22,9 +22,11 @@ export const config = {
     },
     // { maxInstances: 1,
     //   browserName: 'firefox',
-    // 'moz:firefoxOptions': {
-    //   //  args: ['-headless']
-    // }}
+    //   args: [
+    //     //'headless', 
+    //     'disable-gpu',
+    //     '--window-size=1920,1080']
+    // }
   ],
 
   logLevel: "info",

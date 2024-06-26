@@ -32,10 +32,6 @@ class HomePage extends Page {
     return $$("a[data-bbc-content-label='content-item']");
   }
 
-  get carouselItemInViewport(){
-    return $$("ul li:not(.carrousel__item--inactive)")
-  }
-
   async isHomeLogoDisplayed() {
     return (await this.homeLogo).isDisplayed();
   }
