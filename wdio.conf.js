@@ -3,6 +3,16 @@ export const config = {
   runner: "local",
   specs: ["./features/*.feature"],
   
+  suites: {
+    // login: [
+    //     './test/specs/login.success.spec.js',
+    //     './test/specs/login.failure.spec.js'
+    // ],
+    // otherFeature: [
+    //     // ...
+    // ]
+},
+
   exclude: [
     // 'path/to/excluded/files'
   ],
@@ -21,12 +31,16 @@ export const config = {
     }
     },
     // { maxInstances: 1,
+    //   browserName: 'safari',
+    // },
+    // { maxInstances: 1,
     //   browserName: 'firefox',
     //   args: [
     //     //'headless', 
     //     'disable-gpu',
     //     '--window-size=1920,1080']
-    // }
+    // },
+    
   ],
 
   logLevel: "info",
@@ -74,6 +88,10 @@ export const config = {
     source: true,
     // <boolean> fail if there are any undefined or pending steps
     strict: false,
+     /**
+     * The number of times to retry the entire specfile when it fails as a whole
+     */
+     specFileRetries: 1,
     // <string> (expression) only execute the features or scenarios with tags matching the expression
     tagExpression: "",
     // <number> timeout for step definitions
@@ -153,7 +171,7 @@ export const config = {
    * @param {object}                 context  Cucumber World object
    */
   beforeScenario: async function (world) {
-    await browser.reloadSession();
+    //await browser.reloadSession();
   },
   /**
    *
